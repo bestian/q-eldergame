@@ -13,10 +13,8 @@
         </q-btn>
 
         <q-toolbar-title>
-          Quasar App
+          {{$t('title')}}
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
@@ -26,57 +24,29 @@
       content-class="bg-grey-2"
     >
       <q-list>
-        <q-item-label header>Essential Links</q-item-label>
-        <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
+        <q-item-label header>{{$t('game')}}</q-item-label>
+        <q-item>
+          <q-item-section avatar>
+            <q-icon name="home" />
+          </q-item-section>
+          <q-item-section>
+            <router-link to="/home">{{$t('home')}}</router-link>
+          </q-item-section>
+        </q-item>
+        <q-item>
           <q-item-section avatar>
             <q-icon name="school" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Docs</q-item-label>
-            <q-item-label caption>quasar.dev</q-item-label>
+            <router-link to="/pair">{{$t('pair')}}</router-link>
           </q-item-section>
         </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://github.com/quasarframework/">
-          <q-item-section avatar>
-            <q-icon name="code" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Github</q-item-label>
-            <q-item-label caption>github.com/quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="chat" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Discord Chat Channel</q-item-label>
-            <q-item-label caption>chat.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="record_voice_over" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Forum</q-item-label>
-            <q-item-label caption>forum.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://twitter.com/quasarframework">
-          <q-item-section avatar>
-            <q-icon name="rss_feed" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Twitter</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
+        <q-item-label header>{{$t('setting')}}</q-item-label>
       </q-list>
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <router-view :card_list="card_list"/>
     </q-page-container>
   </q-layout>
 </template>
@@ -86,13 +56,55 @@ import { openURL } from 'quasar'
 
 export default {
   name: 'MyLayout',
+  props: 'card_list',
   data () {
     return {
-      leftDrawerOpen: this.$q.platform.is.desktop
+      leftDrawerOpen: this.$q.platform.is.desktop,
+      card_list: [
+        { img: 'https://i.imgur.com/9g8Snz6.jpg', name: '天使' },
+        { img: 'https://i.imgur.com/41zpBhQ.jpg', name: '山' },
+        { img: 'https://i.imgur.com/1vZiSGf.jpg', name: '瀑布' },
+        { img: 'https://i.imgur.com/rPCYQls.png', name: '圓臉' },
+        { img: 'https://i.imgur.com/SuLzJZ3.png', name: '蟲蟲' }
+      ]
     }
   },
   methods: {
-    openURL
+    openURL,
+    addCard: function (url, name) {
+      this.card_list.push({ img: url, name: name })
+      this.setLocal('card_list')
+    },
+    removeCard: function (index) {
+      this.card_list.splice(index, 1)
+      this.setLocal('card_list')
+    },
+    saveCards: function (list) {
+      this.card_list = list
+      this.setLocal('card_list')
+    },
+    hideShow: function (index, bool) {
+      this.card_list[index].hide = bool
+      this.setLocal('card_list')
+    },
+    getLocal: function (n) {
+      console.log('get:' + n)
+      this[n] = JSON.parse(this.$q.localStorage.getItem(n))
+    },
+    setLocal: function (n) {
+      console.log('set:' + n)
+      this.$q.localStorage.set(n, JSON.stringify(this[n]))
+      // console.log(this.$q.localStorage.getItem(n))
+    }
+  },
+  mounted () {
+    // console.log(this.$q.localStorage.getItem(n))
+    if (this.$q.localStorage.getItem('card_list')) {
+      this.getLocal('card_list')
+    }
+    if (this.$q.localStorage.getItem('event_list')) {
+      this.getLocal('event_list')
+    }
   }
 }
 </script>
