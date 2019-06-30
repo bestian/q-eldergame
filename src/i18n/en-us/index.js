@@ -9,9 +9,10 @@ export default {
   success: 'Action was successful',
   home: 'home',
   pair: 'pair',
-  pair_note: 'When same person appear, please tap an image',
+  pair_note: 'Tap an image when both are same',
   speed: 'speed',
   'img_vs_text': 'name vs. image',
   game: 'game',
-  setting: 'setting'
+  setting: 'setting',
+  edit: 'edit'
 }

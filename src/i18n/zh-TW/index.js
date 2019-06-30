@@ -13,5 +13,6 @@ export default {
   speed: '速度',
   'img_vs_text': '字配圖',
   game: '遊戲',
-  setting: '設定'
+  setting: '設定',
+  edit: '編輯'
 }

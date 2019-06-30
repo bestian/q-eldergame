@@ -15,6 +15,11 @@
         <q-toolbar-title>
           {{$t('title')}}
         </q-toolbar-title>
+
+        <q-select
+          v-model="$i18n.locale"
+          :options="langs"
+        />
       </q-toolbar>
     </q-header>
 
@@ -42,6 +47,14 @@
           </q-item-section>
         </q-item>
         <q-item-label header>{{$t('setting')}}</q-item-label>
+        <q-item clickable @click.native="$router.push('/edit')" v-ripple>
+          <q-item-section avatar>
+            <q-icon name="school" />
+          </q-item-section>
+          <q-item-section>
+            {{$t('edit')}}
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
@@ -58,6 +71,7 @@ export default {
   name: 'MyLayout',
   data () {
     return {
+      langs: ['en-us', 'zh-TW'],
       leftDrawerOpen: this.$q.platform.is.desktop,
       card_list: [
         { img: 'https://i.imgur.com/9g8Snz6.jpg', name: '天使' },

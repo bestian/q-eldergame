@@ -6,8 +6,8 @@
     {{$t('intro_1')}}
     </p>
     <q-btn-group big push>
-      <q-btn big push label="玩遊戲" icon="visibility" @click="$router.push({ path: '/pair' })" />
-      <q-btn big push label="設定" icon="settings" />
+      <q-btn big push :label="$t('game')" icon="visibility" @click="$router.push({ path: '/pair' })" />
+      <q-btn big push :label="$t('setting')" icon="settings" @click="$router.push({ path: '/edit' })"  />
     </q-btn-group>
   </q-page>
 </template>
@@ -17,7 +17,12 @@
 
 <script>
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  data () {
+    return {
+      langs: ['en-us', 'zh-TW']
+    }
+  }
 }
 </script>
 
