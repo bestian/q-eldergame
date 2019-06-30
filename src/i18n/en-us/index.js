@@ -16,5 +16,6 @@ export default {
   setting: 'setting',
   edit: 'edit',
   delete: 'delete',
-  hide: 'hide'
+  hide: 'hide',
+  name_game: 'recognize'
 }

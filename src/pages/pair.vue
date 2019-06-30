@@ -107,12 +107,12 @@ export default {
 }
 
 img {
-  width: 40vw;
+  width: 40vmin;
 }
 
 .my-card {
   width: 100%;
-  height: 50vh;
+  height: 50vmax;
   max-width: 250px;
   padding: 5px;
 }

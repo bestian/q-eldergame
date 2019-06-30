@@ -40,16 +40,24 @@
         </q-item>
         <q-item clickable @click.native="$router.push('/pair')" v-ripple>
           <q-item-section avatar>
-            <q-icon name="school" />
+            <q-icon name="sync" />
           </q-item-section>
           <q-item-section>
             {{$t('pair')}}
           </q-item-section>
         </q-item>
+        <q-item clickable @click.native="$router.push('/name')" v-ripple>
+          <q-item-section avatar>
+            <q-icon name="face" />
+          </q-item-section>
+          <q-item-section>
+            {{$t('name_game')}}
+          </q-item-section>
+        </q-item>
         <q-item-label header>{{$t('setting')}}</q-item-label>
         <q-item clickable @click.native="$router.push('/edit')" v-ripple>
           <q-item-section avatar>
-            <q-icon name="school" />
+            <q-icon name="cloud_upload" />
           </q-item-section>
           <q-item-section>
             {{$t('edit')}}

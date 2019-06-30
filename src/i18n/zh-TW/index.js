@@ -18,5 +18,6 @@ export default {
   delete: '刪除',
   hide: '隱藏',
   name: '名字',
+  name_game: '認人',
   add: '新增'
 }
