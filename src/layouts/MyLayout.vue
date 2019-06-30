@@ -30,7 +30,7 @@
             <q-icon name="home" />
           </q-item-section>
           <q-item-section>
-            <router-link to="/home">{{$t('home')}}</router-link>
+            <router-link to="/">{{$t('home')}}</router-link>
           </q-item-section>
         </q-item>
         <q-item>

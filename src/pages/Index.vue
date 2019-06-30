@@ -5,9 +5,9 @@
     您家中有年紀大的長輩嗎？<br/>
     您可以輸入自己家族成員的照片，幫助長輩記得大家。
     </p>
-    <q-btn-group push>
-      <q-btn push label="玩遊戲" icon="visibility" />
-      <q-btn push label="設定" icon="settings" />
+    <q-btn-group big push>
+      <q-btn big push label="玩遊戲" icon="visibility" @click="$router.push({ path: '/pair' })" />
+      <q-btn big push label="設定" icon="settings" />
     </q-btn-group>
   </q-page>
 </template>
@@ -20,3 +20,11 @@ export default {
   name: 'PageIndex'
 }
 </script>
+
+<style scoped>
+  p {
+    padding: 1em;
+    font-weight: bold;
+    font-size: 18px;
+  }
+</style>

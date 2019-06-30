@@ -1,43 +1,51 @@
 <template>
   <q-page padding>
-    <q-toolbar color="primary">
+    <q-toolbar class="bg-secondary glossy text-white">
       <q-toolbar-title>
-        {{$t('pair')}}
-        <span v-if="w > 0">
-          {{$t('success')}}
-        </span>
+        {{$t('pair_note')}}
       </q-toolbar-title>
     </q-toolbar>
     <div class="q-pa-md">
       <div class="row">
         <div class="col" @click="check()" @touchstart="check()">
-          <div class="content" v-show="!hard">
-            <span class="big header">{{card_list[Math.floor(a) % card_list.length].name}}</span>
-          </div>
-          <div class="image">
-            <img class="a" :src="card_list[Math.floor(a) % card_list.length].img">
-          </div>
+          <q-card dark bordered class="bg-grey-9 my-card">
+            <div class="content" v-show="!hard">
+              <span class="big header">{{card_list[Math.floor(a) % card_list.length].name}}</span>
+            </div>
+            <div class="image">
+              <img class="a" :src="card_list[Math.floor(a) % card_list.length].img">
+            </div>
+          </q-card>
         </div>
         <div class="col" @click="check()" @touchstart="check()">
-          <div class="content">
-            <span class="big header" v-bind:class="{ only: hard}">{{card_list[b].name}}</span>
-          </div>
-          <div class="image" v-show="!hard">
-            <img class="a" :src="card_list[b].img">
-          </div>
+          <q-card dark bordered class="bg-grey-9 my-card">
+            <div class="content">
+              <span class="big header" v-bind:class="{ only: hard}">{{card_list[b].name}}</span>
+            </div>
+            <div class="image" v-show="!hard">
+              <img class="a" :src="card_list[b].img">
+            </div>
+          </q-card>
         </div>
       </div>
-      <div class="row">
-        <img src="~/assets/th.jpg" v-if="w > 0">
-      </div>
     </div>
+    {{$t('speed')}} :
+    <q-radio v-model="speed" val="0.1" label="1" />
+    <q-radio v-model="speed" val="0.25" label="2" />
+    <q-radio v-model="speed" val="0.5" label="3" />
+    <q-radio v-model="speed" val="1" label="4" />
+    <win v-show="w" ></win>
   </q-page>
 </template>
 
 <script>
+
+import win from '../components/win'
+
 export default {
   name: 'pair',
   props: ['card_list'],
+  components: { win },
   data () {
     return {
       a: 0,
@@ -100,4 +108,8 @@ img {
   width: 40vw;
 }
 
+.my-card {
+  width: 100%;
+  max-width: 250px;
+}
 </style>

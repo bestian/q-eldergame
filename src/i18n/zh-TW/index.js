@@ -7,6 +7,8 @@ export default {
   success: '成功',
   home: '首頁',
   pair: '配對',
+  pair_note: '出現同一人時，請按其中一張圖',
+  speed: '速度',
   game: '遊戲',
   setting: '設定'
 }
