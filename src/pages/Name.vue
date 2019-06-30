@@ -1,24 +1,44 @@
 <template>
   <q-page padding>
+    <q-toolbar>
+      <q-toolbar-title v-if="!hard"> {{ $t('who_is_this?') }}
+      </q-toolbar-title>
+      <q-toolbar-title v-if="hard"> {{ $t('who_is_missing?') }}
+      </q-toolbar-title>
+    </q-toolbar>
     <div class="q-pa-md">
       <div class="row">
         <div class="col">
+          <q-list bordered separator v-if="hard">
+            <q-item clickable v-ripple v-for="(c,idx) in card_list" v-bind:key="idx" v-show="idx != a && !c.hide">
+              <q-item-section>
+                  <img class="full" :src="c.img" />
+                  <span class="text-white shadow attached top">{{ c.name }}</span>
+              </q-item-section>
+            </q-item>
+          </q-list>
           <q-card v-if="!hard">
             <img :src="card_list[a].img"/>
           </q-card>
         </div>
         <div class="col">
-          <q-list>
+          <q-list bordered separator>
             <q-item v-for = "(c, index) in card_list" :key = "index" v-show="noDup(index) && !c.hide" @click = "b = index; check()" @touchstart="b = index; check()">
               <q-item-section>
                 <q-btn color="green" big>{{ c.name }}</q-btn>
               </q-item-section>
-              <img class="avatar" :src="c.img"/>
+              <img class="avatar" :src="c.img" v-show="!hard"/>
             </q-item>
           </q-list>
         </div>
       </div>
     </div>
+    <q-select color="purple-12" v-model="speed" :options="options" :label="$t('speed')" />
+    <span>{{$t('who_is_missing?')}}:</span>
+    <q-toggle
+      v-model="hard"
+      color="green"
+    />
     <win v-show="winning" ></win>
   </q-page>
 </template>
@@ -43,7 +63,8 @@ export default {
       t: 0.25,
       b: -1,
       hard: false,
-      speed: 0
+      speed: 0,
+      options: [0, 0.25, 0.5, 1]
     }
   },
   methods: {
@@ -96,4 +117,5 @@ export default {
 </script>
 
 <style>
+
 </style>

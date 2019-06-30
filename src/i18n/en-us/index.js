@@ -17,5 +17,6 @@ export default {
   edit: 'edit',
   delete: 'delete',
   hide: 'hide',
-  name_game: 'recognize'
+  name_game: 'recognize',
+  'who_is_this?': 'Who is this one？'
 }

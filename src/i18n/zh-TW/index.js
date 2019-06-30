@@ -19,5 +19,7 @@ export default {
   hide: '隱藏',
   name: '名字',
   name_game: '認人',
-  add: '新增'
+  add: '新增',
+  'who_is_this?': '這是誰呀？',
+  'who_is_missing?': '誰不見了？'
 }

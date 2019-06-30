@@ -29,7 +29,6 @@
       content-class="bg-grey-2"
     >
       <q-list>
-        <q-item-label header>{{$t('game')}}</q-item-label>
         <q-item clickable @click.native="$router.push('/')" v-ripple>
           <q-item-section avatar>
             <q-icon name="home" />
@@ -38,6 +37,7 @@
             {{$t('home')}}
           </q-item-section>
         </q-item>
+        <q-item-label header>{{$t('game')}}</q-item-label>
         <q-item clickable @click.native="$router.push('/pair')" v-ripple>
           <q-item-section avatar>
             <q-icon name="sync" />
@@ -52,6 +52,22 @@
           </q-item-section>
           <q-item-section>
             {{$t('name_game')}}
+          </q-item-section>
+        </q-item>
+        <q-item clickable @click.native="$router.push('/spin')" v-ripple>
+          <q-item-section avatar>
+            <q-icon name="track_changes" />
+          </q-item-section>
+          <q-item-section>
+            {{$t('spin_game')}}
+          </q-item-section>
+        </q-item>
+        <q-item clickable @click.native="$router.push('/fishing')" v-ripple>
+          <q-item-section avatar>
+            <q-icon name="swap_vert" />
+          </q-item-section>
+          <q-item-section>
+            {{$t('fishing_game')}}
           </q-item-section>
         </q-item>
         <q-item-label header>{{$t('setting')}}</q-item-label>
