@@ -14,5 +14,7 @@ export default {
   'img_vs_text': 'name vs. image',
   game: 'game',
   setting: 'setting',
-  edit: 'edit'
+  edit: 'edit',
+  delete: 'delete',
+  hide: 'hide'
 }

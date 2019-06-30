@@ -14,5 +14,9 @@ export default {
   'img_vs_text': '字配圖',
   game: '遊戲',
   setting: '設定',
-  edit: '編輯'
+  edit: '編輯',
+  delete: '刪除',
+  hide: '隱藏',
+  name: '名字',
+  add: '新增'
 }

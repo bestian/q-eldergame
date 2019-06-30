@@ -59,7 +59,8 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view :card_list="card_list"/>
+      <router-view :card_list="card_list" @addCard="addCard" @removeCard = "removeCard"
+      @hideShow = "hideShow" @saveCards = "saveCards"/>
     </q-page-container>
   </q-layout>
 </template>
