@@ -25,20 +25,20 @@
     >
       <q-list>
         <q-item-label header>{{$t('game')}}</q-item-label>
-        <q-item>
+        <q-item clickable @click.native="$router.push('/')" v-ripple>
           <q-item-section avatar>
             <q-icon name="home" />
           </q-item-section>
           <q-item-section>
-            <router-link to="/">{{$t('home')}}</router-link>
+            {{$t('home')}}
           </q-item-section>
         </q-item>
-        <q-item>
+        <q-item clickable @click.native="$router.push('/pair')" v-ripple>
           <q-item-section avatar>
             <q-icon name="school" />
           </q-item-section>
           <q-item-section>
-            <router-link to="/pair">{{$t('pair')}}</router-link>
+            {{$t('pair')}}
           </q-item-section>
         </q-item>
         <q-item-label header>{{$t('setting')}}</q-item-label>
@@ -56,7 +56,6 @@ import { openURL } from 'quasar'
 
 export default {
   name: 'MyLayout',
-  props: 'card_list',
   data () {
     return {
       leftDrawerOpen: this.$q.platform.is.desktop,

@@ -8,7 +8,7 @@
     <div class="q-pa-md">
       <div class="row">
         <div class="col" @click="check()" @touchstart="check()">
-          <q-card dark bordered class="bg-grey-9 my-card">
+          <q-card style="background: radial-gradient(circle, #35a2ff 0%, #014a88 100%)" class="text-white my-card">
             <div class="content" v-show="!hard">
               <span class="big header">{{card_list[Math.floor(a) % card_list.length].name}}</span>
             </div>
@@ -18,7 +18,7 @@
           </q-card>
         </div>
         <div class="col" @click="check()" @touchstart="check()">
-          <q-card dark bordered class="bg-grey-9 my-card">
+          <q-card style="background: radial-gradient(circle, #35a2ff 0%, #393 100%)" class="text-white my-card">
             <div class="content">
               <span class="big header" v-bind:class="{ only: hard}">{{card_list[b].name}}</span>
             </div>
@@ -29,11 +29,12 @@
         </div>
       </div>
     </div>
-    {{$t('speed')}} :
-    <q-radio v-model="speed" val="0.1" label="1" />
-    <q-radio v-model="speed" val="0.25" label="2" />
-    <q-radio v-model="speed" val="0.5" label="3" />
-    <q-radio v-model="speed" val="1" label="4" />
+    <q-select color="purple-12" v-model="speed" :options="options" :label="$t('speed')" />
+    <span>{{$t('img_vs_text')}}:</span>
+    <q-toggle
+      v-model="hard"
+      color="green"
+    />
     <win v-show="w" ></win>
   </q-page>
 </template>
@@ -44,7 +45,7 @@ import win from '../components/win'
 
 export default {
   name: 'pair',
-  props: ['card_list'],
+  props: [ 'card_list' ],
   components: { win },
   data () {
     return {
@@ -55,7 +56,8 @@ export default {
       hard: false,
       record: false,
       good: 0,
-      bad: 0
+      bad: 0,
+      options: [0.1, 0.25, 0.5, 1]
     }
   },
   methods: {
@@ -86,7 +88,7 @@ export default {
     win: function () {
       this.w++
       this.good++
-      setTimeout(this.reset, 3000)
+      setTimeout(this.reset, 2000)
     }
   },
   mounted () {
@@ -110,6 +112,8 @@ img {
 
 .my-card {
   width: 100%;
+  height: 50vh;
   max-width: 250px;
+  padding: 5px;
 }
 </style>

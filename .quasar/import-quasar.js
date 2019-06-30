@@ -13,7 +13,7 @@
 
 import Vue from 'vue'
 
-import {Quasar,QLayout,QHeader,QDrawer,QPageContainer,QPage,QToolbar,QToolbarTitle,QBtn,QBtnGroup,QIcon,QList,QItem,QItemSection,QItemLabel,QRadio,Ripple,Notify,LocalStorage} from 'quasar'
+import {Quasar,QCard,QCardSection,QCardActions,QLayout,QHeader,QDrawer,QPageContainer,QPage,QToggle,QToolbar,QToolbarTitle,QBtn,QBtnGroup,QIcon,QList,QItem,QItemSection,QItemLabel,QRadio,QSelect,Ripple,Notify,LocalStorage} from 'quasar'
 
 
-Vue.use(Quasar, { config: {},components: {QLayout,QHeader,QDrawer,QPageContainer,QPage,QToolbar,QToolbarTitle,QBtn,QBtnGroup,QIcon,QList,QItem,QItemSection,QItemLabel,QRadio},directives: {Ripple},plugins: {Notify,LocalStorage} })
+Vue.use(Quasar, { config: {},components: {QCard,QCardSection,QCardActions,QLayout,QHeader,QDrawer,QPageContainer,QPage,QToggle,QToolbar,QToolbarTitle,QBtn,QBtnGroup,QIcon,QList,QItem,QItemSection,QItemLabel,QRadio,QSelect},directives: {Ripple},plugins: {Notify,LocalStorage} })

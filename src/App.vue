@@ -1,6 +1,6 @@
 <template>
   <div id="q-app">
-    <router-view :card_list = "card_list"/>
+    <router-view/>
   </div>
 </template>
 

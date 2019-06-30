@@ -32,11 +32,15 @@ module.exports = function (ctx) {
       // all: true, // --- includes everything; for dev only!
 
       components: [
+        'QCard',
+        'QCardSection',
+        'QCardActions',
         'QLayout',
         'QHeader',
         'QDrawer',
         'QPageContainer',
         'QPage',
+        'QToggle',
         'QToolbar',
         'QToolbarTitle',
         'QBtn',
@@ -46,7 +50,8 @@ module.exports = function (ctx) {
         'QItem',
         'QItemSection',
         'QItemLabel',
-        'QRadio'
+        'QRadio',
+        'QSelect'
       ],
 
       directives: [
