@@ -26,5 +26,9 @@ export default {
   'who_is_missing?': '誰不見了？',
   'spin_game': '旋轉遊戲',
   'spin_note': '轉到正中間時請按圖',
-  '3d_spin': '8字旋轉'
+  '3d_spin': '8字旋轉',
+  'fishing_game': '釣魚遊戲',
+  'fishing_note': '點擊上下排卡片，找出相同的',
+  'good!': '讚!',
+  'memory_mode': '記憶模式'
 }
