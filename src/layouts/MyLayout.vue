@@ -118,6 +118,13 @@
       <router-view :card_list="card_list" :human_vs_bot="human_vs_bot" :bot_level="bot_level" @addCard="addCard" @removeCard = "removeCard"
       @hideShow = "hideShow" @saveCards = "saveCards"/>
     </q-page-container>
+
+    <q-footer v-if="human_vs_bot">
+      <q-avatar>
+        <img src="../assets/john.png">
+      </q-avatar>
+      {{ $t(speech[0]) }}
+    </q-footer>
   </q-layout>
 </template>
 
@@ -128,7 +135,11 @@ export default {
   name: 'MyLayout',
   data () {
     return {
-      human_vs_bot: false,
+      speech: [
+        'hello! I\'m John',
+        'I\'m thinking...'
+      ],
+      human_vs_bot: true,
       bot_level: 5,
       langs: [
         { label: '繁體中文', value: 'zh-TW' },

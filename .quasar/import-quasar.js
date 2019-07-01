@@ -13,7 +13,7 @@
 
 import Vue from 'vue'
 
-import {Quasar,QAvatar,QCard,QCardSection,QCardActions,QLayout,QHeader,QDrawer,QPageContainer,QPage,QToggle,QToolbar,QToolbarTitle,QBtn,QBtnGroup,QIcon,QList,QInput,QItem,QItemSection,QItemLabel,QRadio,QSelect,Ripple,Notify,LocalStorage} from 'quasar'
+import {Quasar,QAvatar,QCard,QCardSection,QCardActions,QLayout,QHeader,QFooter,QDrawer,QPageContainer,QPage,QToggle,QToolbar,QToolbarTitle,QBtn,QBtnGroup,QIcon,QList,QInput,QItem,QItemSection,QItemLabel,QRadio,QSelect,Ripple,Notify,LocalStorage} from 'quasar'
 
 
-Vue.use(Quasar, { config: {"cordova":{"iosStatusBarPadding":true,"backButtonExit":true}},components: {QAvatar,QCard,QCardSection,QCardActions,QLayout,QHeader,QDrawer,QPageContainer,QPage,QToggle,QToolbar,QToolbarTitle,QBtn,QBtnGroup,QIcon,QList,QInput,QItem,QItemSection,QItemLabel,QRadio,QSelect},directives: {Ripple},plugins: {Notify,LocalStorage} })
+Vue.use(Quasar, { config: {"cordova":{"iosStatusBarPadding":true,"backButtonExit":true}},components: {QAvatar,QCard,QCardSection,QCardActions,QLayout,QHeader,QFooter,QDrawer,QPageContainer,QPage,QToggle,QToolbar,QToolbarTitle,QBtn,QBtnGroup,QIcon,QList,QInput,QItem,QItemSection,QItemLabel,QRadio,QSelect},directives: {Ripple},plugins: {Notify,LocalStorage} })

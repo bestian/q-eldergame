@@ -44,6 +44,7 @@ module.exports = function (ctx) {
         'QCardActions',
         'QLayout',
         'QHeader',
+        'QFooter',
         'QDrawer',
         'QPageContainer',
         'QPage',

@@ -40,22 +40,25 @@
       color="green"
     />
     <win v-show="winning" ></win>
+    <john-win v-show="loosing" ></john-win>
   </q-page>
 </template>
 
 <script>
 
 import win from '../components/win'
+import johnWin from '../components/john_win'
 
 export default {
   name: 'Name',
   props: ['card_list', 'human_vs_bot', 'bot_level'],
   components: {
-    win
+    win, johnWin
   },
   data () {
     return {
       winning: false,
+      loosing: false,
       record: false,
       good: 0,
       bad: 0,
@@ -74,13 +77,13 @@ export default {
     check: function () {
       if (this.isWin()) {
         this.win()
-        setTimeout(this.reset, 3000)
       } else {
         this.bad++
       }
     },
     reset: function () {
       this.winning = false
+      this.loosing = false
       this.a = Math.floor(Math.random() * this.card_list.length)
       if (this.card_list[this.a].hide) {
         this.reset()
@@ -90,12 +93,20 @@ export default {
       this.winning = true
       this.t = 0.25
       this.good++
+      this.bad = 0
+      setTimeout(this.reset, 2000)
+    },
+    loose: function () {
+      this.loosing = true
+      setTimeout(this.reset, 2000)
     },
     go: function () {
-      if (!this.winning) {
+      if (!this.winning && !this.loosing) {
         if (Math.floor(this.t) < Math.floor(this.t + Number(this.speed))) {
           this.bad++
-          this.reset()
+          if (this.bad > (10 - this.bot_level)) {
+            this.loose()
+          }
         }
         this.t += Number(this.speed)
       }

@@ -1,0 +1,57 @@
+<template>
+  <div>
+    <div class = "page">
+      <div class="ui image card">
+        <img src="../assets/john_1.jpg" />
+        <h4>{{ $t('john wins!') }}</h4>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'win',
+  data () {
+    return {
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+
+  img {
+    z-index: 99999;
+    width: 300px;
+    border-radius: 30px;
+  }
+
+  .page {
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-name: bigger;
+    animation-duration: 3s;
+    opacity: 0.96;
+    text-align: center;
+  }
+
+  .page img {
+  }
+
+  /* The animation code */
+  @keyframes bigger {
+      0%   {transform: scale(0.7)}
+      50%  {transform: scale(1.5)}
+      100% {transform: scale(0.7)}
+  }
+
+</style>
