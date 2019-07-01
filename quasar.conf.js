@@ -151,8 +151,8 @@ module.exports = function (ctx) {
 
     cordova: {
        id: 'tw.bestian.eldergame',
-       version: '3.0.0'
-      // noIosLegacyBuildFlag: true, // uncomment only if you know what you are doing
+       version: '3.0.0',
+       noIosLegacyBuildFlag: true, // uncomment only if you know what you are doing
     },
 
     electron: {
