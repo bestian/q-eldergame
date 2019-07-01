@@ -9,6 +9,9 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "tw.bestian.eldergame"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "tw.bestian.eldergame"
     }
   },
   "dependent_plugins": {}

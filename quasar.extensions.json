@@ -9,7 +9,14 @@
     "build_always": false,
     "__internal": {
       "dev": {},
-      "build": {}
+      "build": {
+        "cordova": {
+          "iconHash": "2e525d7615dea2d57f0f5011a7605018",
+          "splashscreenHash": "f80cbfd69c07e9dd7aca1ebb42f8ad69",
+          "splashscreenType": "pure",
+          "backgroundColor": "#000074"
+        }
+      }
     }
   }
 }
