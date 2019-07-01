@@ -12,10 +12,11 @@
 import Vue from 'vue'
 import './import-quasar.js'
 
-
+import ImageUploader from 'vue-image-upload-resize'
 
 import App from 'app/src/App.vue'
 
+Vue.use(ImageUploader)
 
 import createRouter from 'app/src/router/index'
 

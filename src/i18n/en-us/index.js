@@ -16,16 +16,13 @@ export default {
   'img_vs_text': 'name vs. image',
   game: 'game',
   setting: 'setting',
-  edit: 'Edit',
-  delete: 'x',
+  edit: 'edit',
+  delete: 'delete',
   hide: 'hide',
   'name_game': 'Recognization',
   'who_is_this?': 'Who is this one？',
   'spin_game': 'Spinning Game',
   'spin_note': 'Click image when it turn to center',
-  '3d_spin': '3D spin',
-  'fishing_game': 'Fishing Game',
-  'fishing_note': 'Click and find the same card pair',
-  'good!': 'good!',
-  'memory_mode': 'Memory mode'
+  '3d_spin': '3D spin'
+
 }
