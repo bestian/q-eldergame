@@ -32,9 +32,9 @@
 	<key>NSCameraUsageDescription</key>
 	<string>need use camara</string>
 	<key>NSMainNibFile</key>
-	<string></string>
+	<string/>
 	<key>NSMainNibFile~ipad</key>
-	<string></string>
+	<string/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>user can use thier own photos to play</string>
 	<key>UILaunchStoryboardName</key>
