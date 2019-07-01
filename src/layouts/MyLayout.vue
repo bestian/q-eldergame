@@ -24,6 +24,16 @@
             emit-value
           />
         </div>
+
+        <q-btn
+          flat
+          dense
+          round
+          @click="rightDrawerOpen = !rightDrawerOpen"
+          aria-label="Menu"
+        >
+          <q-icon name="menu" />
+        </q-btn>
       </q-toolbar>
     </q-header>
 
@@ -86,8 +96,26 @@
       </q-list>
     </q-drawer>
 
+    <q-drawer
+      side="right"
+      v-model="rightDrawerOpen"
+      bordered
+      content-class="bg-grey-2">
+      <q-list>
+        <q-item>
+          <q-item-section>
+            {{ $t('human_vs_bot') }}
+            <q-toggle
+              v-model="human_vs_bot"
+              color="green"
+            />
+          </q-item-section>
+        </q-item>
+      </q-list>
+    </q-drawer>
+
     <q-page-container>
-      <router-view :card_list="card_list" @addCard="addCard" @removeCard = "removeCard"
+      <router-view :card_list="card_list" :human_vs_bot="human_vs_bot" :bot_level="bot_level" @addCard="addCard" @removeCard = "removeCard"
       @hideShow = "hideShow" @saveCards = "saveCards"/>
     </q-page-container>
   </q-layout>
@@ -100,12 +128,15 @@ export default {
   name: 'MyLayout',
   data () {
     return {
+      human_vs_bot: false,
+      bot_level: 5,
       langs: [
         { label: '繁體中文', value: 'zh-TW' },
         { label: '簡体中文', value: 'zh-CN' },
         { label: 'US English', value: 'en-us' }
       ],
       leftDrawerOpen: this.$q.platform.is.desktop,
+      rightDrawerOpen: this.$q.platform.is.desktop,
       card_list: [
         { img: 'https://i.imgur.com/9g8Snz6.jpg', name: '天使' },
         { img: 'https://i.imgur.com/41zpBhQ.jpg', name: '山' },

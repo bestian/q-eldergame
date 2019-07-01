@@ -49,7 +49,7 @@ import win from '../components/win'
 
 export default {
   name: 'Name',
-  props: ['card_list'],
+  props: ['card_list', 'human_vs_bot', 'bot_level'],
   components: {
     win
   },

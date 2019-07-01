@@ -30,5 +30,6 @@ export default {
   'fishing_game': '釣魚遊戲',
   'fishing_note': '點擊上下排卡片，找出相同的',
   'good!': '讚!',
-  'memory_mode': '記憶模式'
+  'memory_mode': '記憶模式',
+  'human_vs_bot': '挑戰機器人'
 }
