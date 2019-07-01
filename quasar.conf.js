@@ -26,8 +26,14 @@ module.exports = function (ctx) {
     ],
 
     framework: {
+      config: {
+        cordova: {
+          iosStatusBarPadding: true, // add the dynamic top padding on iOS mobile devices
+          backButtonExit: true // Quasar handles app exit on mobile phone back button
+        }
+      },
       // iconSet: 'ionicons-v4',
-      // lang: 'de', // Quasar language
+      // lang: 'zh-TW', // Quasar language
 
       // all: true, // --- includes everything; for dev only!
 
@@ -144,7 +150,8 @@ module.exports = function (ctx) {
     },
 
     cordova: {
-      // id: 'tw.bestian.eldergame',
+       id: 'tw.bestian.eldergame',
+       version: '3.0.0'
       // noIosLegacyBuildFlag: true, // uncomment only if you know what you are doing
     },
 
