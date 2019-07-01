@@ -107,7 +107,7 @@ export default {
 }
 
 img {
-  width: 40vmin;
+  width: 100%;
 }
 
 .my-card {

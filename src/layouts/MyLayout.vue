@@ -102,6 +102,7 @@ export default {
     return {
       langs: [
         { label: '繁體中文', value: 'zh-TW' },
+        { label: '簡体中文', value: 'zh-CN' },
         { label: 'US English', value: 'en-us' }
       ],
       leftDrawerOpen: this.$q.platform.is.desktop,
