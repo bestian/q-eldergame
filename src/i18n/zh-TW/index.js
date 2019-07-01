@@ -2,6 +2,7 @@
 // so you can safely delete all default props below
 
 export default {
+  lang: '語言',
   title: '認照片遊戲',
   intro_0: '您家中有年紀大的長輩嗎？',
   intro_1: '您可以輸入自己家族成員的照片，幫助長輩記得大家。',

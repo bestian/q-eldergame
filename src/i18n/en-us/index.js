@@ -2,6 +2,7 @@
 // so you can safely delete all default props below
 
 export default {
+  lang: 'lang',
   title: 'Photo Game',
   intro_0: 'Do you have elders in your family?',
   intro_1: 'You may use photos of your family members to let the elders rembemer them,',

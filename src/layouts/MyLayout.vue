@@ -20,6 +20,7 @@
           <q-select
             v-model="$i18n.locale"
             :options="langs"
+            :label="$t('lang')"
             emit-value
           />
         </div>
@@ -100,8 +101,8 @@ export default {
   data () {
     return {
       langs: [
-        'zh-TW',
-        'en-us'
+        { label: '繁體中文', value: 'zh-TW' },
+        { label: 'US English', value: 'en-us' }
       ],
       leftDrawerOpen: this.$q.platform.is.desktop,
       card_list: [
