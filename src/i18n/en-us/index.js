@@ -9,7 +9,8 @@ export default {
   success: 'Action was successful',
   home: 'home',
   pair: 'pair',
-  pair_note: 'Tap an image when both are same',
+  'pair_game': 'Pair Game',
+  'pair_note': 'Tap an image when both are same',
   speed: 'speed',
   'img_vs_text': 'name vs. image',
   game: 'game',
@@ -17,6 +18,10 @@ export default {
   edit: 'edit',
   delete: 'delete',
   hide: 'hide',
-  name_game: 'recognize',
-  'who_is_this?': 'Who is this one？'
+  'name_game': 'Recognization',
+  'who_is_this?': 'Who is this one？',
+  'spin_game': 'Spinning Game',
+  'spin_note': 'Click image when it turn to center',
+  '3d_spin': '3D spin'
+
 }

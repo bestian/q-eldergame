@@ -13,7 +13,7 @@
             <q-item clickable v-ripple v-for="(c,idx) in card_list" v-bind:key="idx" v-show="idx != a && !c.hide">
               <q-item-section>
                   <img class="full" :src="c.img" />
-                  <span class="text-white shadow attached top">{{ c.name }}</span>
+                  <span class="text-white small shadow attached top">{{ c.name }}</span>
               </q-item-section>
             </q-item>
           </q-list>

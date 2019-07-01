@@ -9,6 +9,7 @@ export default {
   success: '成功',
   home: '首頁',
   pair: '配對',
+  pair_game: '配對遊戲',
   pair_note: '出現同一人時，請按其中一張圖',
   speed: '速度',
   'img_vs_text': '字配圖',
@@ -18,8 +19,11 @@ export default {
   delete: '刪除',
   hide: '隱藏',
   name: '名字',
-  name_game: '認人',
+  name_game: '認人遊戲',
   add: '新增',
   'who_is_this?': '這是誰呀？',
-  'who_is_missing?': '誰不見了？'
+  'who_is_missing?': '誰不見了？',
+  'spin_game': '旋轉遊戲',
+  'spin_note': '轉到正中間時請按圖',
+  '3d_spin': '8字旋轉'
 }

@@ -47,12 +47,20 @@ img.full {
 }
 
 .top {
-  top: 35px;
+  top: 5px;
   left: 35px;
+}
+
+.top.middle {
+  left: calc(50% - 1em)
 }
 
 .text-white.shadow {
   text-shadow: black 2px 2px;
+}
+
+.small {
+  font-size: 14px;
 }
 
 </style>

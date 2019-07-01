@@ -16,10 +16,13 @@
           {{$t('title')}}
         </q-toolbar-title>
 
-        <q-select
-          v-model="$i18n.locale"
-          :options="langs"
-        />
+        <div class="q-gutter-md">
+          <q-select
+            v-model="$i18n.locale"
+            :options="langs"
+            emit-value
+          />
+        </div>
       </q-toolbar>
     </q-header>
 
@@ -43,7 +46,7 @@
             <q-icon name="sync" />
           </q-item-section>
           <q-item-section>
-            {{$t('pair')}}
+            {{$t('pair_game')}}
           </q-item-section>
         </q-item>
         <q-item clickable @click.native="$router.push('/name')" v-ripple>
@@ -96,7 +99,10 @@ export default {
   name: 'MyLayout',
   data () {
     return {
-      langs: ['en-us', 'zh-TW'],
+      langs: [
+        'zh-TW',
+        'en-us'
+      ],
       leftDrawerOpen: this.$q.platform.is.desktop,
       card_list: [
         { img: 'https://i.imgur.com/9g8Snz6.jpg', name: '天使' },
