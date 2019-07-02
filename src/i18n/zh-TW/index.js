@@ -24,6 +24,7 @@ export default {
   name_game: '認人遊戲',
   add: '新增',
   importJSON: '匯入JSON檔',
+  genJSON: '產生JSON檔',
   update: '更新',
   'who_is_this?': '這是誰呀？',
   'who_is_missing?': '誰不見了？',

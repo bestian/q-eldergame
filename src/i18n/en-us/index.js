@@ -18,6 +18,7 @@ export default {
   setting: 'setting',
   edit: 'Edit',
   importJSON: 'Import JSON file',
+  genJSON: 'Generate JSON file',
   delete: 'x',
   hide: 'hide',
   'name_game': 'Recognization',
