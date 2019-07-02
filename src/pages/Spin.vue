@@ -5,6 +5,12 @@
         {{ $t('spin_note') }}
       </q-toolbar-title>
     </q-toolbar>
+    <q-toolbar v-if="human_vs_bot">
+      <q-avatar>
+        <img src="../assets/john.png">
+      </q-avatar>
+      <q-linear-progress :value="progress" class="q-mt-md" />
+    </q-toolbar>
     <div class="centered">
       <div class="spin" v-bind:class="{good: isWin()}" v-bind:style="{ transform: countTrans(deg) }" @click="check()" @touchstart="check()">
         <div class="image">
@@ -20,21 +26,25 @@
       color="green"
     />
     <win v-show="winning"></win>
+    <john-win v-show="loosing" ></john-win>
   </q-page>
 </template>
 
 <script>
 import win from '../components/win'
+import johnWin from '../components/john_win'
 
 export default {
   name: 'Spin',
-  props: ['card_list'],
+  props: ['card_list', 'human_vs_bot', 'bot_level'],
   components: {
-    win
+    win, johnWin
   },
   data () {
     return {
+      progress: 0,
       winning: false,
+      loosing: false,
       record: false,
       good: 0,
       bad: 0,
@@ -67,6 +77,7 @@ export default {
     reset: function () {
       this.deg = 0
       this.winning = false
+      this.loosing = false
       this.a = Math.floor(Math.random() * this.card_list.length)
       if (this.card_list[this.a].hide) {
         this.reset()
@@ -74,8 +85,13 @@ export default {
     },
     win: function () {
       this.winning = true
+      this.progress = 0
       this.deg = 0
       this.good++
+    },
+    loose: function () {
+      this.loosing = true
+      setTimeout(this.reset, 2000)
     },
     go: function () {
       if (!this.winning) {
@@ -83,6 +99,11 @@ export default {
           this.bad++
         }
         this.deg += Number(this.speed)
+        this.progress += (this.bot_level / 1000)
+        if (this.progress >= 1) {
+          this.loose()
+        }
+        this.progress = this.progress % 1
       }
     }
   },

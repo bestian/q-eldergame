@@ -6,6 +6,12 @@
       <q-toolbar-title v-if="hard"> {{ $t('who_is_missing?') }}
       </q-toolbar-title>
     </q-toolbar>
+    <q-toolbar v-if="human_vs_bot">
+      <q-avatar>
+        <img src="../assets/john.png">
+      </q-avatar>
+      <q-linear-progress :value="progress" class="q-mt-md" />
+    </q-toolbar>
     <div class="q-pa-md">
       <div class="row">
         <div class="col">
@@ -60,6 +66,7 @@ export default {
       winning: false,
       loosing: false,
       record: false,
+      progress: 0.1,
       good: 0,
       bad: 0,
       a: 0,
@@ -91,6 +98,7 @@ export default {
     },
     win: function () {
       this.winning = true
+      this.progress = 0
       this.t = 0.25
       this.good++
       this.bad = 0
@@ -104,11 +112,13 @@ export default {
       if (!this.winning && !this.loosing) {
         if (Math.floor(this.t) < Math.floor(this.t + Number(this.speed))) {
           this.bad++
-          if (this.bad > (10 - this.bot_level)) {
-            this.loose()
-          }
         }
         this.t += Number(this.speed)
+        this.progress += (this.bot_level / 100)
+        if (this.progress >= 1) {
+          this.loose()
+        }
+        this.progress = this.progress % 1
       }
     },
     noDup: function (idx) {

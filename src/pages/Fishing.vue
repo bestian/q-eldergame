@@ -18,7 +18,7 @@
       </div>
       <div class="row">
         <div class="col" v-for = "(f, index) in fishs2" :key="index" v-bind:class="[!memory || face1 == index ? 'face' : 'back', f.img ? 'good' : 'null', face1 == index ? 'focus' : 'other']">
-          <q-card v-tap @click = "flip(index,1)">
+          <q-card @click = "flip(index,1)">
             <div class="content">
               <span class="header">{{!memory || face1 == index ? f.name : '?'}}</span>
             </div>

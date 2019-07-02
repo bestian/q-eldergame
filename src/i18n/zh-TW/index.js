@@ -31,6 +31,9 @@ export default {
   'fishing_note': '點擊上下排卡片，找出相同的',
   'good!': '讚!',
   'memory_mode': '記憶模式',
-  'human_vs_bot': '挑戰機器人',
-  'john wins!': '老江贏了'
+  'human_vs_bot': '挑戰老江',
+  'john wins!': '老江贏了',
+  'bot_level': 'AI等級',
+  'hello! I\'m John': '嗨，我是老江',
+  'I\'m thinking...': '我在想'
 }

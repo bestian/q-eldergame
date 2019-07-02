@@ -1,9 +1,15 @@
 <template>
   <q-page padding>
-    <q-toolbar class="bg-secondary glossy text-white">
+    <q-toolbar>
       <q-toolbar-title>
         {{$t('pair_note')}}
       </q-toolbar-title>
+    </q-toolbar>
+    <q-toolbar v-if="human_vs_bot">
+      <q-avatar>
+        <img src="../assets/john.png">
+      </q-avatar>
+      <q-linear-progress :value="progress" class="q-mt-md" />
     </q-toolbar>
     <div class="q-pa-md">
       <div class="row">
@@ -35,23 +41,27 @@
       v-model="hard"
       color="green"
     />
-    <win v-show="w" ></win>
+    <win v-show="winning" ></win>
+    <john-win v-show="loosing" ></john-win>
   </q-page>
 </template>
 
 <script>
 
 import win from '../components/win'
+import johnWin from '../components/john_win'
 
 export default {
   name: 'pair',
-  props: [ 'card_list' ],
-  components: { win },
+  props: [ 'card_list', 'human_vs_bot', 'bot_level' ],
+  components: { win, johnWin },
   data () {
     return {
+      loosing: false,
+      progress: 0.1,
       a: 0,
       b: 0,
-      w: 0,
+      winning: true,
       speed: 0.25,
       hard: false,
       record: false,
@@ -62,11 +72,16 @@ export default {
   },
   methods: {
     go: function () {
-      if (!this.w) {
+      if (!this.winning) {
         this.a += Number(this.speed)
         if (this.card_list[Math.floor(this.a) % this.card_list.length].hide) {
           this.go()
         }
+        this.progress += (this.bot_level / 200)
+        if (this.progress >= 1) {
+          this.loose()
+        }
+        this.progress = this.progress % 1
       }
     },
     check: function () {
@@ -80,14 +95,20 @@ export default {
     },
     reset: function () {
       this.b = Math.floor(Math.random() * this.card_list.length)
-      this.w = 0
+      this.winning = 0
+      this.loosing = false
+      this.progress = 0
       if (this.card_list[this.b].hide) {
         this.reset()
       }
     },
     win: function () {
-      this.w++
+      this.winning++
       this.good++
+      setTimeout(this.reset, 2000)
+    },
+    loose: function () {
+      this.loosing = true
       setTimeout(this.reset, 2000)
     }
   },

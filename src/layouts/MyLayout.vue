@@ -32,7 +32,9 @@
           @click="rightDrawerOpen = !rightDrawerOpen"
           aria-label="Menu"
         >
-          <q-icon name="menu" />
+          <q-avatar>
+            <img src="../assets/john.png"/>
+          </q-avatar>
         </q-btn>
       </q-toolbar>
     </q-header>
@@ -104,11 +106,19 @@
       <q-list>
         <q-item>
           <q-item-section>
+            <q-avatar>
+              <img src="../assets/john.png">
+            </q-avatar>
             {{ $t('human_vs_bot') }}
             <q-toggle
               v-model="human_vs_bot"
               color="green"
             />
+          </q-item-section>
+        </q-item>
+        <q-item>
+          <q-item-section>
+            <q-select color="purple-12" v-model="bot_level" :options="options" :label="$t('bot_level')" />
           </q-item-section>
         </q-item>
       </q-list>
@@ -141,6 +151,7 @@ export default {
       ],
       human_vs_bot: true,
       bot_level: 5,
+      options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       langs: [
         { label: '繁體中文', value: 'zh-TW' },
         { label: '簡体中文', value: 'zh-CN' },
