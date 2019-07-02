@@ -95,6 +95,14 @@
             {{$t('edit')}}
           </q-item-section>
         </q-item>
+        <q-item clickable @click.native="$router.push('/contact')" v-ripple>
+          <q-item-section avatar>
+            <q-icon name="phone" />
+          </q-item-section>
+          <q-item-section>
+            {{$t('contact')}}
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
@@ -125,8 +133,7 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view :card_list="card_list" :human_vs_bot="human_vs_bot" :bot_level="bot_level" @addCard="addCard" @removeCard = "removeCard"
-      @hideShow = "hideShow" @saveCards = "saveCards"/>
+      <router-view :card_list="card_list" :human_vs_bot="human_vs_bot" :bot_level="bot_level" @addCard="addCard" @removeCard = "removeCard" :updateCard="updateCard" @hideShow = "hideShow" @saveCards = "saveCards"/>
     </q-page-container>
 
     <q-footer v-if="human_vs_bot">
@@ -149,7 +156,7 @@ export default {
         'hello! I\'m John',
         'I\'m thinking...'
       ],
-      human_vs_bot: true,
+      human_vs_bot: false,
       bot_level: 5,
       options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       langs: [
@@ -184,6 +191,10 @@ export default {
     },
     hideShow: function (index, bool) {
       this.card_list[index].hide = bool
+      this.setLocal('card_list')
+    },
+    updateCard: function (index, obj) {
+      this.card_list[index] = obj
       this.setLocal('card_list')
     },
     getLocal: function (n) {

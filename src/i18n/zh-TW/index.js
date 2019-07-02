@@ -17,6 +17,7 @@ export default {
   game: '遊戲',
   setting: '設定',
   edit: '編輯',
+  contact: '聯絡',
   delete: '刪除',
   hide: '隱藏',
   name: '名字',
