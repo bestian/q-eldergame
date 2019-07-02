@@ -98,7 +98,7 @@ export default {
       this.winning = false
       this.loosing = false
       this.progress = 0
-      this.$emit('johnSay', 'I\'m thinking...')
+      this.$emit('johnSay', 'Be Relexed...')
       if (this.card_list[this.b].hide) {
         this.reset()
       }
@@ -136,7 +136,7 @@ img {
 
 .my-card {
   width: 100%;
-  height: 50vmax;
+  height: 45vmax;
   max-width: 250px;
   padding: 5px;
 }

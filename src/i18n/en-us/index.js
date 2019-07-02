@@ -27,5 +27,15 @@ export default {
   'fishing_game': 'Fishing Game',
   'fishing_note': 'Click and find the same card pair',
   'good!': 'good!',
-  'memory_mode': 'Memory mode'
+  'memory_mode': 'Memory mode',
+  'human_vs_bot': 'challenge John',
+  'john wins!': 'John wins!',
+  'bot_level': 'John level',
+  'hello! I\'m John': 'Hi, I\'m John',
+  'I like to play with you.': 'I like to play with you.',
+  'Let\'s play': 'Let\'s play',
+  'I\'m thinking...': 'I\'m thinking...',
+  'Be Relexed...': 'Be relexed...',
+  'I win!': 'I win!',
+  'You win!': 'You win!'
 }

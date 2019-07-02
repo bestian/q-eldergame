@@ -40,6 +40,7 @@ export default {
   'I like to play with you.': '我喜歡和你玩',
   'Let\'s play': '來玩吧',
   'I\'m thinking...': '我在想...',
+  'Be Relexed...': '放輕鬆...',
   'I win!': '我贏了!',
   'You win!': '你贏了!'
 }

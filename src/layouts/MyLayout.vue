@@ -121,12 +121,13 @@
             <q-toggle
               v-model="human_vs_bot"
               color="green"
+              @input="saveBot()"
             />
           </q-item-section>
         </q-item>
         <q-item v-if="human_vs_bot">
           <q-item-section>
-            <q-select color="purple-12" v-model="bot_level" :options="options" :label="$t('bot_level')" />
+            <q-select color="purple-12" v-model="bot_level" :options="options" :label="$t('bot_level')" @input="saveBotLev()" />
           </q-item-section>
         </q-item>
         <q-item>
@@ -170,8 +171,8 @@ export default {
         'Let\'s play'
       ],
       human_vs_bot: false,
-      bot_level: 5,
-      options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      bot_level: 4,
+      options: [1, 2, 4, 8, 16],
       langs: [
         { label: '繁體中文', value: 'zh-TW' },
         { label: '簡体中文', value: 'zh-CN' },
@@ -190,6 +191,12 @@ export default {
   },
   methods: {
     openURL,
+    saveBot: function () {
+      this.setLocal('human_vs_bot')
+    },
+    saveBotLev: function () {
+      this.setLocal('bot_level')
+    },
     johnSay: function (text) {
       this.say = text
     },
@@ -229,8 +236,11 @@ export default {
     if (this.$q.localStorage.getItem('card_list')) {
       this.getLocal('card_list')
     }
-    if (this.$q.localStorage.getItem('event_list')) {
-      this.getLocal('event_list')
+    if (this.$q.localStorage.getItem('bot_level')) {
+      this.getLocal('bot_level')
+    }
+    if (this.$q.localStorage.getItem('human_vs_bot')) {
+      this.getLocal('human_vs_bot')
     }
   }
 }

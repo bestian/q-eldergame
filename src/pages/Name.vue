@@ -91,7 +91,7 @@ export default {
     reset: function () {
       this.winning = false
       this.loosing = false
-      this.$emit('johnSay', 'I\'m thinking...')
+      this.$emit('johnSay', 'Be Relexed...')
       this.a = Math.floor(Math.random() * this.card_list.length)
       if (this.card_list[this.a].hide) {
         this.reset()
@@ -117,7 +117,7 @@ export default {
           this.bad++
         }
         this.t += Number(this.speed)
-        this.progress += (this.bot_level / 100)
+        this.progress += (this.bot_level / 50)
         if (this.progress >= 1) {
           this.loose()
         }

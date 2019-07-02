@@ -120,7 +120,7 @@ export default {
       this.winning = false
       this.loosing = false
       this.progress = 0
-      this.$emit('johnSay', 'I\'m thinking...')
+      this.$emit('johnSay', 'Be relexed...')
     },
     win: function () {
       this.winning = true
