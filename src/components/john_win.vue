@@ -3,7 +3,7 @@
     <div class = "page">
       <div class="ui image card">
         <img src="../assets/john_1.jpg" />
-        <h4>{{ $t('john wins!') }}</h4>
+        <h4 class="text-white shadow">{{ $t('john wins!') }}</h4>
       </div>
     </div>
   </div>

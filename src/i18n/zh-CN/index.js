@@ -2,6 +2,13 @@
 // so you can safely delete all default props below
 
 export default {
+  '/': '认照片游戏',
+  '/edit': '编辑器',
+  '/contact': '联络方式',
+  '/pair': '配对游戏',
+  '/fishing': '钓鱼游戏',
+  '/spin': '旋转游戏',
+  '/name': '认人游戏',
   lang: '语言',
   title: '认照片游戏',
   intro_0: '您家中有年纪大的长辈吗？',
@@ -18,9 +25,12 @@ export default {
   setting: '设定',
   edit: '编辑',
   contact: '联络',
+  phone: '电话',
+  'e-mail': '电子邮件',
   delete: '删除',
   hide: '隐藏',
   name: '名字',
+  insert_name: '输入名字',
   name_game: '认人游戏',
   add: '新增',
   importJSON: '汇入JSON档',
@@ -42,7 +52,7 @@ export default {
   'I like to play with you.': '我喜欢和你玩',
   'Let\'s play': '来玩吧',
   'I\'m thinking...': '我在想...',
-  'Be Relexed...': '放轻松...',
+  'Be relexed...': '放轻松...',
   'I win!': '我赢了!',
   'You win!': '你赢了!'
 }

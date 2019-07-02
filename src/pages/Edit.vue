@@ -1,10 +1,5 @@
 <template>
   <q-page padding>
-    <q-toolbar>
-      <q-toolbar-title>
-        {{$t('edit')}}
-      </q-toolbar-title>
-    </q-toolbar>
     <q-list bordered separator>
       <q-item>
         <div class="upload-btn-wrapper">
@@ -30,10 +25,10 @@
     </q-item>
     <q-item>
         <q-item-section>
-          <q-input v-model="name" :label="$t('name')" />
+          <q-input v-model="name" :label="$t('insert_name')" />
         </q-item-section>
         <q-item-section>
-          <q-btn color="green" @click="addCard(url, name); url = ''; name = ''">
+          <q-btn color = "green" :disable="!name || !url" @click="addCard(url, name); url = ''; name = ''">
             {{$t('add')}}
           </q-btn>
         </q-item-section>

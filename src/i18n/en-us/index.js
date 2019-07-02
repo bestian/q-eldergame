@@ -2,6 +2,13 @@
 // so you can safely delete all default props below
 
 export default {
+  '/': 'Photo Game',
+  '/edit': 'Editor',
+  '/contact': 'Contact',
+  '/pair': 'Pairing Game',
+  '/fishing': 'Fishing Game',
+  '/spin': 'Spinning Game',
+  '/name': 'Recongnizing Game',
   lang: 'lang',
   title: 'Photo Game',
   intro_0: 'Do you have elders in your family?',
@@ -15,12 +22,18 @@ export default {
   speed: 'speed',
   'img_vs_text': 'name vs. image',
   game: 'game',
+  name: 'name',
+  insert_name: 'insert name',
+  contact: 'contact',
   setting: 'setting',
   edit: 'Edit',
   importJSON: 'Import JSON file',
   genJSON: 'Generate JSON file',
+  add: 'add',
   delete: 'x',
   hide: 'hide',
+  phone: 'phone',
+  'e-mail': 'e-mail',
   'name_game': 'Recognization',
   'who_is_this?': 'Who is this one？',
   'spin_game': 'Spinning Game',
@@ -37,7 +50,7 @@ export default {
   'I like to play with you.': 'I like to play with you.',
   'Let\'s play': 'Let\'s play',
   'I\'m thinking...': 'I\'m thinking...',
-  'Be Relexed...': 'Be relexed...',
+  'Be relexed...': 'Be relexed...',
   'I win!': 'I win!',
   'You win!': 'You win!'
 }

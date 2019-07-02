@@ -98,7 +98,7 @@ export default {
       this.winning = false
       this.loosing = false
       this.progress = 0
-      this.$emit('johnSay', 'Be Relexed...')
+      this.$emit('johnSay', 'Be relexed...')
       if (this.card_list[this.b].hide) {
         this.reset()
       }

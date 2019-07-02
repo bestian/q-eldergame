@@ -13,7 +13,7 @@
         </q-btn>
 
         <q-toolbar-title>
-          {{$t('title')}}
+          {{$t($route.path)}}
         </q-toolbar-title>
 
         <div class="q-gutter-md">
@@ -147,7 +147,7 @@
     </q-drawer>
 
     <q-page-container>
-      <router-view :card_list="card_list" :human_vs_bot="human_vs_bot" :bot_level="bot_level" @addCard="addCard" @removeCard = "removeCard" :updateCard="updateCard" @hideShow = "hideShow" @saveCards = "saveCards" @johnSay="johnSay"/>
+      <router-view :card_list="card_list" :human_vs_bot="human_vs_bot" :bot_level="bot_level" @addCard="addCard" @removeCard = "removeCard" @updateCard="updateCard" @hideShow = "hideShow" @saveCards = "saveCards" @johnSay="johnSay"/>
     </q-page-container>
 
     <q-footer v-if="human_vs_bot && $route.path != '/edit' && $route.path != '/contact'">
