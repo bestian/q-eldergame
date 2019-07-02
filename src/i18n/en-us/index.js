@@ -17,6 +17,7 @@ export default {
   game: 'game',
   setting: 'setting',
   edit: 'Edit',
+  importJSON: 'Import JSON file',
   delete: 'x',
   hide: 'hide',
   'name_game': 'Recognization',

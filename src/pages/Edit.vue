@@ -55,6 +55,14 @@
           <q-toggle v-model="c.hide"/>
         </q-item-section>
       </q-item>
+      <q-item>
+        <q-item-section>
+          {{ $t('importJSON') }}
+        </q-item-section>
+        <q-item-section>
+          <input type="file" @change="importJSON" name="json" id="json" accept="application/json">
+        </q-item-section>
+      </q-item>
     </q-list>
   </q-page>
 </template>
