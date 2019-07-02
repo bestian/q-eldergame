@@ -124,7 +124,7 @@
             />
           </q-item-section>
         </q-item>
-        <q-item>
+        <q-item v-if="human_vs_bot">
           <q-item-section>
             <q-select color="purple-12" v-model="bot_level" :options="options" :label="$t('bot_level')" />
           </q-item-section>

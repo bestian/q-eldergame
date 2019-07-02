@@ -23,6 +23,7 @@ export default {
   name: '名字',
   name_game: '認人遊戲',
   add: '新增',
+  update: '更新',
   'who_is_this?': '這是誰呀？',
   'who_is_missing?': '誰不見了？',
   'spin_game': '旋轉遊戲',
