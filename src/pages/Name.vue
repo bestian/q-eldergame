@@ -10,7 +10,7 @@
       <q-avatar>
         <img src="../assets/john.png">
       </q-avatar>
-      <q-linear-progress :value="progress" class="q-mt-md" />
+      <q-linear-progress stripe rounded style="height: 25px" :value="progress" class="q-mt-md" :color="progress > 0.62 ? 'red' : 'blue'"/>
     </q-toolbar>
     <div class="q-pa-md">
       <div class="row">
@@ -91,6 +91,7 @@ export default {
     reset: function () {
       this.winning = false
       this.loosing = false
+      this.$emit('johnSay', 'I\'m thinking...')
       this.a = Math.floor(Math.random() * this.card_list.length)
       if (this.card_list[this.a].hide) {
         this.reset()
@@ -102,10 +103,12 @@ export default {
       this.t = 0.25
       this.good++
       this.bad = 0
+      this.$emit('johnSay', 'You win!')
       setTimeout(this.reset, 2000)
     },
     loose: function () {
       this.loosing = true
+      this.$emit('johnSay', 'I win!')
       setTimeout(this.reset, 2000)
     },
     go: function () {

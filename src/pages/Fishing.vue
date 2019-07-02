@@ -5,6 +5,12 @@
         {{ $t('fishing_note') }}
       </q-toolbar-title>
     </q-toolbar>
+    <q-toolbar v-if="human_vs_bot">
+      <q-avatar>
+        <img src="../assets/john.png">
+      </q-avatar>
+      <q-linear-progress stripe rounded style="height: 25px" :value="progress" class="q-mt-md" :color="progress > 0.62 ? 'red' : 'blue'"/>
+    </q-toolbar>
     <div class="q-pa-md">
       <div class="row">
         <div class="col" v-for = "(f, index) in fishs1" :key="f.img+index" v-bind:class="[!memory || face0 == index ? 'face' : 'back', f.img ? 'good' : 'null', face0 == index ? 'focus' : 'other']">
@@ -39,22 +45,26 @@
       color="green"
     />
     <win v-show="winning"></win>
+    <john-win v-show="loosing" ></john-win>
   </q-page>
 </template>
 
 <script>
 import win from '../components/win'
+import johnWin from '../components/john_win'
 
 export default {
   name: 'Fishing',
-  props: ['card_list'],
+  props: ['card_list', 'human_vs_bot', 'bot_level'],
   components: {
-    win
+    win, johnWin
   },
   data () {
     return {
       w: false,
+      progress: 0.1,
       winning: false,
+      loosing: false,
       memory: true,
       hard: false,
       fishs1: [],
@@ -108,12 +118,30 @@ export default {
         return Math.random() - 0.5
       })
       this.winning = false
+      this.loosing = false
+      this.progress = 0
+      this.$emit('johnSay', 'I\'m thinking...')
     },
     win: function () {
       this.winning = true
+      this.$emit('johnSay', 'You win!')
+    },
+    loose: function () {
+      this.loosing = true
+      this.$emit('johnSay', 'I win!')
+      setTimeout(this.reset, 2000)
+    },
+    go: function () {
+      if (!this.winning && !this.loosing) {
+        this.progress += (this.bot_level / 200)
+        if (this.progress >= 1 && this.human_vs_bot) {
+          this.loose()
+        }
+      }
     }
   },
   mounted () {
+    setInterval(this.go, 500)
     setTimeout(this.reset, 500)
   }
 }

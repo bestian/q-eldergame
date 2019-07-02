@@ -129,18 +129,29 @@
             <q-select color="purple-12" v-model="bot_level" :options="options" :label="$t('bot_level')" />
           </q-item-section>
         </q-item>
+        <q-item>
+          <q-chat-message avatar="../assets/john.png" :text="says.map((o) => $t(o))">
+          </q-chat-message>
+        </q-item>
+        <q-item clickable v-ripple @click.native="$router.push('/pair'); rightDrawerOpen = false; human_vs_bot = true" >
+
+          <q-avatar>
+            <img src="../assets/john.png">
+          </q-avatar>
+          <q-item-section>
+            {{ $t('Let\'s play') }}
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
     <q-page-container>
-      <router-view :card_list="card_list" :human_vs_bot="human_vs_bot" :bot_level="bot_level" @addCard="addCard" @removeCard = "removeCard" :updateCard="updateCard" @hideShow = "hideShow" @saveCards = "saveCards"/>
+      <router-view :card_list="card_list" :human_vs_bot="human_vs_bot" :bot_level="bot_level" @addCard="addCard" @removeCard = "removeCard" :updateCard="updateCard" @hideShow = "hideShow" @saveCards = "saveCards" @johnSay="johnSay"/>
     </q-page-container>
 
-    <q-footer v-if="human_vs_bot">
-      <q-avatar>
-        <img src="../assets/john.png">
-      </q-avatar>
-      {{ $t(speech[0]) }}
+    <q-footer v-if="human_vs_bot && $route.path != '/edit' && $route.path != '/contact'">
+      <q-chat-message avatar="../assets/john.png" :text="[$t(say)]">
+      </q-chat-message>
     </q-footer>
   </q-layout>
 </template>
@@ -152,9 +163,11 @@ export default {
   name: 'MyLayout',
   data () {
     return {
-      speech: [
+      say: 'hello! I\'m John',
+      says: [
         'hello! I\'m John',
-        'I\'m thinking...'
+        'I like to play with you.',
+        'Let\'s play'
       ],
       human_vs_bot: false,
       bot_level: 5,
@@ -177,6 +190,9 @@ export default {
   },
   methods: {
     openURL,
+    johnSay: function (text) {
+      this.say = text
+    },
     addCard: function (url, name) {
       this.card_list.push({ img: url, name: name })
       this.setLocal('card_list')
@@ -208,6 +224,7 @@ export default {
     }
   },
   mounted () {
+    console.log(this.$route.path)
     // console.log(this.$q.localStorage.getItem(n))
     if (this.$q.localStorage.getItem('card_list')) {
       this.getLocal('card_list')

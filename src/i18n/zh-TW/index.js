@@ -35,7 +35,11 @@ export default {
   'memory_mode': '記憶模式',
   'human_vs_bot': '挑戰老江',
   'john wins!': '老江贏了',
-  'bot_level': 'AI等級',
+  'bot_level': '老江等級',
   'hello! I\'m John': '嗨，我是老江',
-  'I\'m thinking...': '我在想'
+  'I like to play with you.': '我喜歡和你玩',
+  'Let\'s play': '來玩吧',
+  'I\'m thinking...': '我在想...',
+  'I win!': '我贏了!',
+  'You win!': '你贏了!'
 }

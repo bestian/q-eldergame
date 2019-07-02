@@ -49,9 +49,9 @@ export default {
 
   /* The animation code */
   @keyframes bigger {
-      0%   {transform: scale(0.7)}
-      50%  {transform: scale(1.5)}
-      100% {transform: scale(0.7)}
+      0%   {transform: scale(0.2)}
+      50%  {transform: scale(0.8)}
+      100% {transform: scale(0.2)}
   }
 
 </style>

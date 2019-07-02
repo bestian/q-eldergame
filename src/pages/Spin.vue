@@ -9,10 +9,10 @@
       <q-avatar>
         <img src="../assets/john.png">
       </q-avatar>
-      <q-linear-progress :value="progress" class="q-mt-md" />
+      <q-linear-progress stripe rounded style="height: 25px" :value="progress" class="q-mt-md" :color="progress > 0.62 ? 'red' : 'blue'"/>
     </q-toolbar>
     <div class="centered">
-      <div class="spin" v-bind:class="{good: isWin()}" v-bind:style="{ transform: countTrans(deg) }" @click="check()" @touchstart="check()">
+      <div class="spin" v-bind:class="{good: isWin(), hide: winning || loosing}" v-bind:style="{ transform: countTrans(deg) }" @click="check()" @touchstart="check()">
         <div class="image">
           <h4 class="attached top middle text-white shadow">{{card_list[a].name}}</h4>
           <img class="a" :src="card_list[a].img">
@@ -69,41 +69,45 @@ export default {
     check: function () {
       if (this.isWin()) {
         this.win()
-        setTimeout(this.reset, 3000)
       } else {
         this.bad++
       }
     },
     reset: function () {
-      this.deg = 0
-      this.winning = false
-      this.loosing = false
+      console.log('reset')
       this.a = Math.floor(Math.random() * this.card_list.length)
       if (this.card_list[this.a].hide) {
         this.reset()
       }
+      this.deg = 0
+      this.winning = false
+      this.loosing = false
+      this.progress = 0
+      this.$emit('johnSay', 'I\'m thinking...')
     },
     win: function () {
       this.winning = true
       this.progress = 0
       this.deg = 0
       this.good++
+      this.$emit('johnSay', 'You win!')
+      setTimeout(this.reset, 3000)
     },
     loose: function () {
       this.loosing = true
-      setTimeout(this.reset, 2000)
+      this.$emit('johnSay', 'I win!')
+      setTimeout(this.reset, 3000)
     },
     go: function () {
-      if (!this.winning) {
+      if (!this.winning && !this.loosing) {
         if (Math.floor(this.deg / 360) < Math.floor((this.deg + Number(this.speed)) / 360)) {
           this.bad++
         }
         this.deg += Number(this.speed)
         this.progress += (this.bot_level / 1000)
-        if (this.progress >= 1) {
+        if (this.progress >= 1 && this.isWin() && this.human_vs_bot) {
           this.loose()
         }
-        this.progress = this.progress % 1
       }
     }
   },
@@ -135,6 +139,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hide {
+  opacity: 0;
 }
 
 </style>

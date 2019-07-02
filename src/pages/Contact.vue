@@ -15,6 +15,8 @@
         <q-item-section>
           <q-input type="text" v-model="c.email" name="" :label="$t('e-mail')"></q-input>
           <q-input v-model="c.phone" name="" :label="$t('phone')"></q-input>
+        </q-item-section>
+        <q-item-section>
           <q-btn color="green" @click="updateCard(idx, c)">
             {{$t('update')}}
           </q-btn>

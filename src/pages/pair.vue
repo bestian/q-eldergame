@@ -9,7 +9,7 @@
       <q-avatar>
         <img src="../assets/john.png">
       </q-avatar>
-      <q-linear-progress :value="progress" class="q-mt-md" />
+      <q-linear-progress stripe rounded style="height: 25px" :value="progress" class="q-mt-md" :color="progress > 0.62 ? 'red' : 'blue'"/>
     </q-toolbar>
     <div class="q-pa-md">
       <div class="row">
@@ -78,10 +78,10 @@ export default {
           this.go()
         }
         this.progress += (this.bot_level / 200)
-        if (this.progress >= 1) {
+        var ma = Math.floor(this.a) % this.card_list.length
+        if (this.progress >= 1 && this.card_list[ma].name === this.card_list[this.b].name && this.human_vs_bot) {
           this.loose()
         }
-        this.progress = this.progress % 1
       }
     },
     check: function () {
@@ -95,9 +95,10 @@ export default {
     },
     reset: function () {
       this.b = Math.floor(Math.random() * this.card_list.length)
-      this.winning = 0
+      this.winning = false
       this.loosing = false
       this.progress = 0
+      this.$emit('johnSay', 'I\'m thinking...')
       if (this.card_list[this.b].hide) {
         this.reset()
       }
@@ -105,10 +106,12 @@ export default {
     win: function () {
       this.winning++
       this.good++
+      this.$emit('johnSay', 'You win!')
       setTimeout(this.reset, 2000)
     },
     loose: function () {
       this.loosing = true
+      this.$emit('johnSay', 'I win!')
       setTimeout(this.reset, 2000)
     }
   },
