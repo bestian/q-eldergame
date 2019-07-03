@@ -159,7 +159,7 @@ module.exports = function (ctx) {
     },
 
     electron: {
-      // bundler: 'builder', // or 'packager'
+      bundler: 'builder', // or 'packager'
 
       extendWebpack (cfg) {
         // do something with Electron main process Webpack cfg
@@ -170,7 +170,7 @@ module.exports = function (ctx) {
         // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
 
         // OS X / Mac App Store
-        // appBundleId: '',
+        appBundleId: 'tw.bestian.eldergame',
         // appCategoryType: '',
         // osxSign: '',
         // protocol: 'myapp://path',
@@ -182,7 +182,7 @@ module.exports = function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        // appId: 'q-eldergame'
+        appId: 'tw.bestian.eldergame'
       }
     }
   }
