@@ -8,10 +8,15 @@
     },
     "build_always": false,
     "__internal": {
-      "dev": {},
-      "build": {
+      "dev": {
         "electron": {
           "iconHash": "2e525d7615dea2d57f0f5011a7605018"
+        }
+      },
+      "build": {
+        "electron": {
+          "iconHash": "2e525d7615dea2d57f0f5011a7605018",
+          "GH_TOKEN": "082ddfece05f879f0f90c3faa50306d843998034"
         }
       }
     }
