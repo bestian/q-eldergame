@@ -40,10 +40,9 @@ import qboot_Booti18n from 'boot/i18n'
 
 
 
+import FastClick from 'fastclick'
 
 
-import electron from 'electron'
-Vue.prototype.$q.electron = electron
 
 
 
@@ -51,6 +50,12 @@ Vue.prototype.$q.electron = electron
 
 
 const { app, router } = createApp()
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    FastClick.attach(document.body)
+  }, false)
 
 
 
@@ -88,9 +93,14 @@ async function start () {
     
 
     
+    document.addEventListener('deviceready', () => {
+    Vue.prototype.$q.cordova = window.cordova
+    
 
       new Vue(app)
 
+    
+    }, false) // on deviceready
     
 
   

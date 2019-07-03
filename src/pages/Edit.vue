@@ -58,13 +58,13 @@
           <input type="file" @change="importJSON" name="json" id="json" accept="application/json">
         </q-item-section>
       </q-item>
-      <q-item>
+   <!--   <q-item>
         <q-item-section>
           <a href="http://elder.game.tw/#edit" target="_blank">
             {{ $t('genJSON') }}
           </a>
         </q-item-section>
-      </q-item>
+      </q-item> -->
     </q-list>
   </q-page>
 </template>
