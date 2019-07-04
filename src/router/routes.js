@@ -10,7 +10,8 @@ const routes = [
       { path: 'contact', component: () => import('pages/Contact.vue') },
       { path: 'name', component: () => import('pages/Name.vue') },
       { path: 'fishing', component: () => import('pages/Fishing.vue') },
-      { path: 'spin', component: () => import('pages/Spin.vue') }
+      { path: 'spin', component: () => import('pages/Spin.vue') },
+      { path: 'privacy', component: () => import('pages/Privacy.vue') }
     ]
   }
 ]

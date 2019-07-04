@@ -103,6 +103,14 @@
             {{$t('contact')}}
           </q-item-section>
         </q-item>
+        <q-item clickable @click.native="$router.push('/privacy')" v-ripple>
+          <q-item-section avatar>
+            <q-icon name="assignment_turned_in" />
+          </q-item-section>
+          <q-item-section>
+            {{$t('privacy')}}
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
