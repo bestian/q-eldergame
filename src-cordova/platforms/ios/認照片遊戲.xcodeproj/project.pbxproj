@@ -232,6 +232,9 @@
 			knownRegions = (
 				English,
 				en,
+				"zh-Hant",
+				"zh-Hans",
+				"zh-HK",
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
