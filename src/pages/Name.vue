@@ -118,10 +118,9 @@ export default {
         }
         this.t += Number(this.speed)
         this.progress += (this.bot_level / 50)
-        if (this.progress >= 1) {
+        if (this.progress >= 1 && this.human_vs_bot) {
           this.loose()
         }
-        this.progress = this.progress % 1
       }
     },
     noDup: function (idx) {
