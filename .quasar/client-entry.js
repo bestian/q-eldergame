@@ -40,8 +40,6 @@ import qboot_Booti18n from 'boot/i18n'
 
 
 
-import FastClick from 'fastclick'
-
 
 
 
@@ -50,12 +48,6 @@ import FastClick from 'fastclick'
 
 
 const { app, router } = createApp()
-
-
-
-  document.addEventListener('DOMContentLoaded', () => {
-    FastClick.attach(document.body)
-  }, false)
 
 
 

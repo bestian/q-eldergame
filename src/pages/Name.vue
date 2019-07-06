@@ -91,6 +91,7 @@ export default {
     reset: function () {
       this.winning = false
       this.loosing = false
+      this.progress = 0
       this.$emit('johnSay', 'Be relexed...')
       this.a = Math.floor(Math.random() * this.card_list.length)
       if (this.card_list[this.a].hide) {
