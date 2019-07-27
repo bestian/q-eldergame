@@ -12,7 +12,6 @@
             outputFormat="verbose"
             :preview=false
             :className="['fileinput', { 'fileinput--loaded' : hasImage }]"
-            capture="environment"
             accept="image/*"
             doNotResize="['gif', 'svg']"
             @input="setImage"

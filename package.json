@@ -1,6 +1,6 @@
 {
   "name": "q-eldergame",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "description": "A Quasar Framework app",
   "productName": "認照片遊戲",
   "cordovaId": "tw.bestian.eldergame",
