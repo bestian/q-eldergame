@@ -29,9 +29,9 @@
         </div>
         <div class="col">
           <q-list bordered separator>
-            <q-item v-for = "(c, index) in card_list" :key = "index" v-show="noDup(index) && !c.hide" @click = "b = index; check()" @touchstart="b = index; check()">
+            <q-item v-for = "(c, index) in card_list" :key = "index" v-show="noDup(index) && !c.hide">
               <q-item-section>
-                <q-btn color="green" big>{{ c.name }}</q-btn>
+                <q-btn color="green" big @click = "b = index; check()" @touchstart="b = index; check()">{{ c.name }}</q-btn>
               </q-item-section>
               <img class="avatar" :src="c.img" v-show="!hard"/>
             </q-item>
