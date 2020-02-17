@@ -40,20 +40,22 @@ import qboot_Booti18n from 'boot/i18n'
 
 
 
+import FastClick from 'fastclick'
 
 
 
 
-Vue.config.devtools = true
-Vue.config.productionTip = false
 
-
-
-console.info('[Quasar] Running SPA.')
 
 
 
 const { app, router } = createApp()
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    FastClick.attach(document.body)
+  }, false)
 
 
 
@@ -91,9 +93,14 @@ async function start () {
     
 
     
+    document.addEventListener('deviceready', () => {
+    Vue.prototype.$q.cordova = window.cordova
+    
 
       new Vue(app)
 
+    
+    }, false) // on deviceready
     
 
   
