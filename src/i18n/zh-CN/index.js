@@ -2,7 +2,7 @@
 // so you can safely delete all default props below
 
 export default {
-  '/': '认照片游戏',
+  '/': '认字游戏',
   '/edit': '编辑器',
   '/contact': '联络方式',
   '/pair': '配对游戏',
