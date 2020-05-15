@@ -2,7 +2,7 @@
 // so you can safely delete all default props below
 
 export default {
-  '/': 'Words Game',
+  '/': 'Photo Game',
   '/edit': 'Editor',
   '/contact': 'Contact',
   '/pair': 'Pairing Game',
